@@ -15,7 +15,7 @@ func divide(dividend int, divisor int) int {
 		t = -t
 		divisor = -divisor
 	}
-	fmt.Println(t)
+	// fmt.Println(t)
 	ans := 0
 	for dividend >= divisor {
 		dividend -= divisor
