@@ -1,5 +1,13 @@
 package main
-import "fmt"
+
+import (
+	"fmt"
+	"sort"
+)
+
 func main() {
-    fmt.Println("hello world")
+	arr := []int{3, 6, 9}
+	for i := 0; i < 12; i++ {
+		fmt.Println(i, sort.SearchInts(arr, i))
+	}
 }
