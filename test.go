@@ -9,8 +9,6 @@ func ttt(arr [3]int) {
 }
 
 func main() {
-	arr := [3]int{1, 2, 3}
-	fmt.Println(arr)
-	ttt(arr)
-	fmt.Println(arr)
+	sl := make([][][]int, 9, 9, 9)
+	fmt.Println(sl)
 }
