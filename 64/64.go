@@ -30,7 +30,7 @@ func minPathSum(grid [][]int) int {
 			}
 		}
 	}
-	fmt.Println(dp)
+	// fmt.Println(dp)
 	return dp[m-1][n-1]
 }
 
