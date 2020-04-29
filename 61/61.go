@@ -54,27 +54,41 @@ func listlen(head *ListNode) int{
 	return ret
 }
 
-func mergelist(l1,l2 *ListNode) *ListNode{
-	if l1 == nil{
-		return l2
+func rotateRight(head *ListNode, k int) *ListNode {
+	l := listlen(head)
+	if l ==0{
+		return head
 	}
-	if l2 == nil{
-		return l1
+	k %= l
+	k = l-k
+	if k ==0 {
+		return head
 	}
-	ptr := l1
-	for ptr.Next!=nil{
-		ptr = ptr.Next
+
+	tmp := head
+	for tmp.Next != nil{
+		tmp = tmp.Next
 	}
-	ptr.Next = l2
-	return l1
+	tmp.Next = head
+
+	new_head := head
+	for i:=0;i<k;i++{
+		new_head = new_head.Next
+	}
+	fmt.Println(new_head.Val)
+
+	tmp = new_head
+	for tmp.Next != new_head{
+		tmp = tmp.Next
+	}
+	tmp.Next = nil
+
+	return new_head
 }
 
 func main() {
-	l1:=makelist([]int{1,2,3,4})
-	fmt.Println(l1)
-	printlist(l1)
-	fmt.Println(listlen(l1))
-	l2:=makelist([]int{5,6,7})
-	l1 = mergelist(l1,l2)
-	printlist(l1)
+	a := makelist([]int{1,2,3,4,5})
+	printlist(a)
+	a = rotateRight(a,2)
+	printlist(a)
 }
